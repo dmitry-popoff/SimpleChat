@@ -25,7 +25,7 @@ public class ServerNotificationProcessingJob : IJob
 
     public async Task Execute(IJobExecutionContext context)
     {
-        using CancellationTokenSource cts = new CancellationTokenSource(TimeSpan.FromSeconds(ProcessingTimeSpanSec));
+        using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(ProcessingTimeSpanSec));
 
         try
         {
